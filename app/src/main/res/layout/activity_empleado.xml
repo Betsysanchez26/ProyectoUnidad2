@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Empleados"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textStyle="bold"/>
+    <ImageButton
+        android:id="@+id/nuevoEmpleado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_weight=".1"
+        android:layout_margin="8dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerEmpleados"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".9"
+        android:layout_margin="8dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
