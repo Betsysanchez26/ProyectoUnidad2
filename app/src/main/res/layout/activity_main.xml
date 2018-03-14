@@ -5,29 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.betsysanchez.proyectounidad2.MainActivity">
+    tools:context="com.example.betsysanchez.proyectounidad2.Activitys.MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_margin="8dp"
-        android:padding="8dp">
+        android:layout_margin="16dp"
+        android:padding="8dp"
+        android:weightSum="1">
        <ImageButton
            android:id="@+id/clientes"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:src="@drawable/ic_launcher_background"/>
+           android:src="@drawable/cliente"
+           android:layout_weight=".5"
+           android:layout_margin="8dp"/>
         <ImageButton
             android:id="@+id/empleados"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"/>
+            android:src="@drawable/empleado"
+            android:layout_weight=".5"
+            android:layout_margin="8dp"/>
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerObras"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp">
 
     </android.support.v7.widget.RecyclerView>

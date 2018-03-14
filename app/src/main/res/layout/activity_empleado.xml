@@ -12,9 +12,9 @@
         android:textStyle="bold"/>
     <ImageButton
         android:id="@+id/nuevoEmpleado"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_foreground"
+        android:src="@drawable/empleado"
         android:layout_weight=".1"
         android:layout_margin="8dp"/>
     <android.support.v7.widget.RecyclerView

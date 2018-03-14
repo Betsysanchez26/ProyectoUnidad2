@@ -3,6 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -10,12 +17,14 @@
         android:textAlignment="center"
         android:textSize="18dp"/>
     <EditText
+        android:id="@+id/nombreCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre"
         android:layout_margin="8dp"
         android:inputType="text"/>
     <EditText
+        android:id="@+id/direccionCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Dirección"
@@ -23,35 +32,36 @@
         android:inputType="text"
         android:lines="2"/>
     <EditText
+        android:id="@+id/celularCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Celular"
         android:layout_margin="8dp"
         android:inputType="phone"/>
     <EditText
+        android:id="@+id/mailCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mail"
         android:layout_margin="8dp"
         android:inputType="textEmailAddress"/>
     <EditText
+        android:id="@+id/descripcionCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Descripción"
         android:layout_margin="8dp"
         android:lines="3"/>
     <EditText
+        android:id="@+id/montoCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Monto"
         android:layout_margin="8dp"
         android:inputType="numberDecimal"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre"
-        android:layout_margin="8dp"/>
+
     <CheckBox
+        android:id="@+id/finalizadaCli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Finalizada"
@@ -62,6 +72,7 @@
         android:orientation="horizontal"
         android:weightSum="1">
         <Button
+            android:id="@+id/cancelarCli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancelar"
@@ -72,11 +83,14 @@
             android:layout_height="wrap_content"
             android:layout_weight=".3"/>
         <Button
+            android:id="@+id/guardarCli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Guardar"
             android:layout_margin="8dp"
             android:layout_weight=".35"/>
     </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
