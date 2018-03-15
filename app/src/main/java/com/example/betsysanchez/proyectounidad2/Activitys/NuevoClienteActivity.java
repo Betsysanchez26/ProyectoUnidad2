@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.betsysanchez.proyectounidad2.Entidades.BDHandler;
@@ -23,6 +24,7 @@ public class NuevoClienteActivity extends AppCompatActivity {
     CheckBox finalizada;
     Button guardar,cancelar;
     public static String identificadorC="";
+    TextView title;
     BDHandler conn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,9 @@ public class NuevoClienteActivity extends AppCompatActivity {
         guardar=findViewById(R.id.guardarCli);
         cancelar=findViewById(R.id.cancelarCli);
         conn=new BDHandler(this);
+        title=findViewById(R.id.tituloCliente);
         if(identificadorC!="") {
+            title.setText("Editar Cliente");
             String [][] mod=conn.consultarClientes("select * from cliente where idCliente='" + identificadorC + "'");
             nombre.setText(mod[0][1]);
             direccion.setText(mod[0][2]);
@@ -54,7 +58,7 @@ public class NuevoClienteActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(identificadorC!=""){
                     conn.actCliente(identificadorC,nombre.getText().toString(),direccion.getText().toString(),celular.getText().toString()
-                            ,mail.getText().toString(),descripcion.getText().toString(),monto.getText().toString(),finalizada.getText().toString());
+                            ,mail.getText().toString(),descripcion.getText().toString(),monto.getText().toString(),finalizada.isChecked()+"");
                 }else{
                     registrarCliente();
                 }

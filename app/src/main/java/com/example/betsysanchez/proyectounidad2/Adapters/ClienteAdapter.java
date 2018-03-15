@@ -44,13 +44,13 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.Recycler
         holder.celular.setText("Celular: "+data[position][3]);
         holder.actividad.setText("Actividad "+(Integer.parseInt(data[position][0])-1)+": "+data[position][5]);
         holder.monto.setText("Monto:"+data[position][6]);
-        Toast.makeText(context,"Fin: "+data[position][7],Toast.LENGTH_SHORT).show();
-        if(data[position][7]==("false")){
+       // Toast.makeText(context,"Fin: "+data[position][7],Toast.LENGTH_SHORT).show();
+        if(data[position][7].equals("true")){
             holder.finalizada.setBackgroundResource(R.drawable.ic_check_box_white_24dp);
             holder.etiqueta.setText("Finalizada");
-        }else{
+        }else {
             holder.finalizada.setBackgroundResource(R.drawable.ic_check_box_outline_blank);
-            holder.etiqueta.setText("En Procesos");
+            holder.etiqueta.setText("En Proceso");
         }
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,9 +72,6 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.Recycler
                 context.startActivity(i);
             }
         });
-//        holder.finalizada.setChecked(true);
-        // holder.cant_obra.setText(data[position][6]);
-        //  holder.pago_estimado.setText(data[position][7]);
     }
 
     @Override

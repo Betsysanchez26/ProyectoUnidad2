@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.betsysanchez.proyectounidad2.Adapters.EmpleadoAdapter;
@@ -17,7 +18,7 @@ import com.example.betsysanchez.proyectounidad2.R;
  */
 
 public class EmpleadoActivity extends AppCompatActivity{
-    ImageButton nuevoEmp;
+    Button nuevoEmp;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;

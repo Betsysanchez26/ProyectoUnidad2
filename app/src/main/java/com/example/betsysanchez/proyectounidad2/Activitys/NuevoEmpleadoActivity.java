@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.betsysanchez.proyectounidad2.Entidades.BDHandler;
@@ -32,11 +33,13 @@ public class NuevoEmpleadoActivity extends AppCompatActivity {
     public static String identificador="";
     public ArrayList<String> datos;
     BDHandler conn;
+    TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nuevo_empleado);
 
+        title=findViewById(R.id.tituloEmpleado);
         nombre=findViewById(R.id.nombreEmp);
         actividad=findViewById(R.id.actividadEmp);
         fecIni=findViewById(R.id.fecIni);
@@ -57,6 +60,7 @@ public class NuevoEmpleadoActivity extends AppCompatActivity {
         //hacer consulta e imprimir el id
         System.out.println(identificador);
        if(identificador!="") {
+            title.setText("Editar Empleado");
             String [][] mod=conn.consultarEmpleados("select * from empleado where idEmpleado='" + identificador + "'");
             nombre.setText(mod[0][1]);
             actividad.setSelection(Integer.parseInt(mod[0][2]));
@@ -82,6 +86,8 @@ public class NuevoEmpleadoActivity extends AppCompatActivity {
                     conn.actEmpleado(identificador,nombre.getText().toString(),actividad.getSelectedItemPosition()+"",feIni,feFin
                     ,celular.getText().toString(),cantObra.getText().toString(),pagoEst.getText().toString());
                 }else{
+                   //          int a=Integer.parseInt(conn.)
+
                 registrarEmpleado();
                 }
                 finish();

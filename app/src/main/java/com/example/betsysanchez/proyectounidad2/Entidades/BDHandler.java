@@ -102,12 +102,12 @@ public class BDHandler extends SQLiteOpenHelper {
 
     public String[][] consultarRelacion(String sql){
         Cursor c = db.rawQuery(sql,null);
-        String [][] elementos = new String [c.getCount()][c.getColumnCount()];
+        String [][] elementos = new String [c.getCount()][c.getColumnCount()+1];
         if (c.moveToFirst()){
             int contador=0;
             do{
-                elementos[contador][1]=c.getString(c.getColumnIndex("id_cliente"));
-                elementos[contador][2]=c.getString(c.getColumnIndex("id_empleado"));
+                elementos[contador][0]=c.getString(c.getColumnIndex("nombre"));
+                elementos[contador][1]=c.getString(c.getColumnIndex("celular"));
                 contador++;
             }while(c.moveToNext());
         }

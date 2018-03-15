@@ -24,24 +24,18 @@
             android:text=""
             android:textAlignment="viewEnd"
             android:textColor="@color/colorSecondaryText"
-            android:layout_weight=".95"/>
-    <ImageButton
+            android:layout_weight=".99"/>
+    <Button
         android:id="@+id/nuevoEmpleado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/empleado"
-        android:layout_weight=".1"
+        android:text="Agregar"
+        android:layout_weight=".05"
         android:layout_margin="10dp"
         android:padding="8dp"
         android:background="@color/colorPrimary"/>
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Agregar Empleado"
-        android:textAlignment="viewEnd"
-        android:textColor="@color/colorSecondaryText" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerEmpleados"
         android:layout_width="match_parent"

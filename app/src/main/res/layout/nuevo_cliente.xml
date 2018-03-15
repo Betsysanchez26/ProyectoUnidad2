@@ -89,7 +89,6 @@
         android:id="@+id/montoCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Monto"
         android:layout_margin="8dp"
         android:inputType="numberDecimal"/>
             <TextView
