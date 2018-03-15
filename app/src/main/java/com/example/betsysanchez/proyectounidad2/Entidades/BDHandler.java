@@ -87,4 +87,31 @@ public class BDHandler extends SQLiteOpenHelper {
         if(c!=null){c.close();}
         return elementos;
     }
+    public void actCliente(String id,String nombre, String direccion,String celular, String mail
+            , String descripcion, String monto, String finalizada){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("nombre",nombre);
+        contentValues.put("direccion",direccion);
+        contentValues.put("celular",celular);
+        contentValues.put("mail",mail);
+        contentValues.put("descripcion",descripcion);
+        contentValues.put("monto",monto);
+        contentValues.put("finalizada",finalizada);
+        db.update("cliente",contentValues,"idCliente='"+id+"'",null);
+    }
+
+    public String[][] consultarRelacion(String sql){
+        Cursor c = db.rawQuery(sql,null);
+        String [][] elementos = new String [c.getCount()][c.getColumnCount()];
+        if (c.moveToFirst()){
+            int contador=0;
+            do{
+                elementos[contador][1]=c.getString(c.getColumnIndex("id_cliente"));
+                elementos[contador][2]=c.getString(c.getColumnIndex("id_empleado"));
+                contador++;
+            }while(c.moveToNext());
+        }
+        if(c!=null){c.close();}
+        return elementos;
+    }
 }

@@ -19,15 +19,27 @@
            android:layout_height="wrap_content"
            android:src="@drawable/cliente"
            android:layout_weight=".5"
-           android:layout_margin="8dp"/>
+           android:layout_margin="8dp"
+           android:background="@color/colorPrimary"
+           android:padding="8dp"/>
         <ImageButton
             android:id="@+id/empleados"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/empleado"
             android:layout_weight=".5"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:padding="10dp"/>
     </LinearLayout>
+        <Switch
+            android:id="@+id/switchFin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Finalizados"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorSecondaryText"
+            android:layout_margin="8dp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerObras"

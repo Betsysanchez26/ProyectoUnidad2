@@ -27,9 +27,8 @@ public class AsignadosAdapter extends RecyclerView.Adapter<AsignadosAdapter.Recy
 
     @Override
     public void onBindViewHolder(AsignadosAdapter.RecyclerViewHolder holder, int position) {
-        holder.nombre.setText("Nombre: "+data[position][1]);
-        holder.celular.setText("Celular: "+data[position][5]);
-
+        holder.nombre.setText("Nombre: "+data[position][0]);
+        holder.celular.setText("Celular: "+data[position][1]);
     }
 
     @Override

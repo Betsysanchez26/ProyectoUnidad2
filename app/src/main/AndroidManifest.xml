@@ -19,6 +19,7 @@
         <activity android:name=".Activitys.NuevoClienteActivity"></activity>
         <activity android:name=".Activitys.EmpleadoActivity"></activity>
         <activity android:name=".Activitys.NuevoEmpleadoActivity"></activity>
+        <activity android:name=".Activitys.EmpleadoAsigActivity"></activity>
     </application>
 
 </manifest>

@@ -22,6 +22,8 @@ public class NuevoClienteActivity extends AppCompatActivity {
     EditText nombre,direccion, celular,mail,descripcion,monto;
     CheckBox finalizada;
     Button guardar,cancelar;
+    public static String identificadorC="";
+    BDHandler conn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +38,26 @@ public class NuevoClienteActivity extends AppCompatActivity {
         finalizada=findViewById(R.id.finalizadaCli);
         guardar=findViewById(R.id.guardarCli);
         cancelar=findViewById(R.id.cancelarCli);
-
+        conn=new BDHandler(this);
+        if(identificadorC!="") {
+            String [][] mod=conn.consultarClientes("select * from cliente where idCliente='" + identificadorC + "'");
+            nombre.setText(mod[0][1]);
+            direccion.setText(mod[0][2]);
+            celular.setText(mod[0][3]);
+            mail.setText(mod[0][4]);
+            descripcion.setText(mod[0][5]);
+            monto.setText(mod[0][6]);
+            finalizada.setChecked(Boolean.parseBoolean(mod[0][7]));
+        }
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registrarCliente();
+                if(identificadorC!=""){
+                    conn.actCliente(identificadorC,nombre.getText().toString(),direccion.getText().toString(),celular.getText().toString()
+                            ,mail.getText().toString(),descripcion.getText().toString(),monto.getText().toString(),finalizada.getText().toString());
+                }else{
+                    registrarCliente();
+                }
                 finish();
             }
         });

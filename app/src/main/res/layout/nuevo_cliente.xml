@@ -11,47 +11,80 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
     <TextView
+        android:id="@+id/tituloCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nuevo Cliente"
         android:textAlignment="center"
-        android:textSize="18dp"/>
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:textColor="@color/colorPrimaryText"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <EditText
         android:id="@+id/nombreCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre"
         android:layout_margin="8dp"
         android:inputType="text"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Direccion"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <EditText
         android:id="@+id/direccionCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Dirección"
         android:layout_margin="8dp"
         android:inputType="text"
         android:lines="2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Celular"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <EditText
         android:id="@+id/celularCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Celular"
         android:layout_margin="8dp"
         android:inputType="phone"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mail"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <EditText
         android:id="@+id/mailCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Mail"
         android:layout_margin="8dp"
         android:inputType="textEmailAddress"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descripcion de Actividad"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <EditText
         android:id="@+id/descripcionCli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descripción"
-        android:layout_margin="8dp"
-        android:lines="3"/>
+        android:layout_margin="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monto"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <EditText
         android:id="@+id/montoCli"
         android:layout_width="match_parent"
@@ -59,7 +92,12 @@
         android:hint="Monto"
         android:layout_margin="8dp"
         android:inputType="numberDecimal"/>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estado"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <CheckBox
         android:id="@+id/finalizadaCli"
         android:layout_width="wrap_content"
@@ -70,25 +108,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_margin="8dp">
         <Button
             android:id="@+id/cancelarCli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancelar"
             android:layout_margin="8dp"
-            android:layout_weight=".35"/>
+            android:layout_weight=".35"
+            android:textColor="@color/colorPrimaryText"
+            android:background="@color/colorPrimaryDark"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight=".3"/>
+            android:layout_weight=".3" />
         <Button
             android:id="@+id/guardarCli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Guardar"
             android:layout_margin="8dp"
-            android:layout_weight=".35"/>
+            android:layout_weight=".35"
+            android:textColor="@color/colorPrimaryText"
+            android:background="@color/colorPrimaryDark"/>
     </LinearLayout>
         </LinearLayout>
     </ScrollView>

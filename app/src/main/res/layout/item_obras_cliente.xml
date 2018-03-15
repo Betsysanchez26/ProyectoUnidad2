@@ -4,8 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:layout_margin="16dp"
-    android:background="@color/colorPrimary"
-    android:weightSum="1">
+    android:background="@color/colorPrimaryLight"
+    android:weightSum="1"
+    android:padding="8dp">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,28 +16,44 @@
         android:id="@+id/verNombreCli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="nombre"/>
+        android:text="nombre"
+        android:textColor="@color/colorPrimaryText"/>
     <TextView
         android:id="@+id/verCelCli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="celular"/>
+        android:text="celular"
+        android:textColor="@color/colorPrimaryText"/>
     <TextView
         android:id="@+id/verActividadCli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="actividad"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryText"/>
     <TextView
         android:id="@+id/verMontoCli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="monto"/>
-    <ImageView
-        android:id="@+id/verFinalizadaCli"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_check_box_outline_blank"/>
+        android:text="monto"
+        android:textColor="@color/colorPrimaryText"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+            android:id="@+id/verFinalizadaCli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check_box_outline_blank"/>
+            <TextView
+                android:id="@+id/etiquetaFinalizado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="En Proceso"
+                android:layout_margin="8dp"
+                android:textColor="@color/colorPrimaryText"/>
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -44,9 +61,13 @@
         android:orientation="vertical"
         android:layout_weight=".3">
     <Button
+        android:id="@+id/verEmpCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ver Empleados"/>
+        android:text="Ver Empleados"
+        android:textColor="@color/colorPrimaryText"
+        android:background="@color/colorPrimaryDark"
+        android:layout_margin="8dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,14 +79,18 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_create_white_24dp"
         android:layout_weight="0.4"
-        android:layout_margin="8dp"/>
+        android:layout_margin="4dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="8dp"/>
         <ImageButton
             android:id="@+id/eliminarCliente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_delete_white_24dp"
             android:layout_weight=".4"
-            android:layout_margin="8dp"/>
+            android:layout_margin="4dp"
+            android:background="@color/colorPrimaryDark"
+            android:padding="8dp"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

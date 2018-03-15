@@ -21,12 +21,13 @@ public class EmpleadoActivity extends AppCompatActivity{
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+    BDHandler conn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empleado);
         nuevoEmp = findViewById(R.id.nuevoEmpleado);
-        BDHandler conn=new BDHandler(this);
+        conn=new BDHandler(this);
         recyclerView = findViewById(R.id.recyclerEmpleados);
         String [][] a = conn.consultarEmpleados("Select * from empleado order by nombre");
         adapter = new EmpleadoAdapter(a,getApplicationContext());
@@ -43,5 +44,8 @@ public class EmpleadoActivity extends AppCompatActivity{
                 startActivity(i);
             }
         });
+    }
+    public String getActividad(int id){
+        return  id+"";
     }
 }

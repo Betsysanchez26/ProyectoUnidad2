@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.betsysanchez.proyectounidad2.Activitys.EmpleadoActivity;
 import com.example.betsysanchez.proyectounidad2.Activitys.NuevoClienteActivity;
 import com.example.betsysanchez.proyectounidad2.Activitys.NuevoEmpleadoActivity;
 import com.example.betsysanchez.proyectounidad2.Entidades.BDHandler;
@@ -37,9 +38,9 @@ public class EmpleadoAdapter extends RecyclerView.Adapter<EmpleadoAdapter.Recycl
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
         final String id = data[position][0];
-        NuevoEmpleadoActivity ne= new NuevoEmpleadoActivity();
+        EmpleadoActivity ne= new EmpleadoActivity();
         holder.nombre.setText("Nombre: "+data[position][1]);
-        holder.actividad.setText("Actividad: "+ne.takeActivity[Integer.parseInt(data[position][2])][5]);
+        holder.actividad.setText("Actividad: "+ne.getActividad(Integer.parseInt(data[position][2])));
         holder.fecha_inicio.setText("Fecha de Inicio: "+data[position][3]);
         holder.fecha_fin.setText("Fecha de fin:"+data[position][4]);
         holder.celular.setText("Celular: "+data[position][5]);

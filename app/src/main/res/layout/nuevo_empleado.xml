@@ -11,26 +11,44 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_margin="8dp">
+            <TextView
+                android:id="@+id/tituloEmpleado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nuevo Empleado"
+                android:textAlignment="center"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryText"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <EditText
         android:id="@+id/nombreEmp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre"
         android:layout_margin="8dp"
         android:inputType="text"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="actividad"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actividad"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <Spinner
         android:id="@+id/actividadEmp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha inicio"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha Inicio"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <DatePicker
         android:id="@+id/fecIni"
         android:layout_width="match_parent"
@@ -38,11 +56,15 @@
         android:hint="Fecha de Inicio"
         android:layout_margin="8dp"
         android:datePickerMode="spinner"
-        android:calendarViewShown="false"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha fin"/>
+        android:calendarViewShown="false"
+        android:background="@color/colorPrimaryLight"
+        android:calendarTextColor="@color/colorPrimaryText"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha Fin"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <DatePicker
         android:id="@+id/fecFin"
         android:layout_width="match_parent"
@@ -50,26 +72,43 @@
         android:hint="Fecha de Fin"
         android:layout_margin="8dp"
         android:datePickerMode="spinner"
-        android:calendarViewShown="false"/>
+        android:calendarViewShown="false"
+        android:background="@color/colorPrimaryLight"
+        android:calendarTextColor="@color/colorPrimaryText"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Celular"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <EditText
         android:id="@+id/celularEmp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Celular"
         android:layout_margin="8dp"
         android:inputType="phone"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cantidad de Obra"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <EditText
         android:id="@+id/cantObra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Cantidad de Obra"
         android:layout_margin="8dp"
         android:inputType="number"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pago Estimado"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_margin="4dp"/>
     <EditText
         android:id="@+id/pagoEst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Pago Estimado"
         android:layout_margin="8dp"
         android:inputType="numberDecimal"/>
     <LinearLayout
@@ -83,7 +122,9 @@
             android:layout_height="wrap_content"
             android:text="Cancelar"
             android:layout_margin="8dp"
-            android:layout_weight=".35"/>
+            android:layout_weight=".35"
+            android:textColor="@color/colorPrimaryText"
+            android:background="@color/colorPrimaryDark"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -94,7 +135,9 @@
             android:layout_height="wrap_content"
             android:text="Guardar"
             android:layout_margin="8dp"
-            android:layout_weight=".35"/>
+            android:layout_weight=".35"
+            android:textColor="@color/colorPrimaryText"
+            android:background="@color/colorPrimaryDark"/>
     </LinearLayout>
         </LinearLayout>
     </ScrollView>

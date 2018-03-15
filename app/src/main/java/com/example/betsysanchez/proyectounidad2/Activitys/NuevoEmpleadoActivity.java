@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.betsysanchez.proyectounidad2.Entidades.BDHandler;
 import com.example.betsysanchez.proyectounidad2.Entidades.Empleado;
+import com.example.betsysanchez.proyectounidad2.Entidades.ActividadEmpleado;
 import com.example.betsysanchez.proyectounidad2.R;
 
 import java.util.ArrayList;
@@ -30,9 +31,7 @@ public class NuevoEmpleadoActivity extends AppCompatActivity {
     DatePicker fecIni,fecFin;
     public static String identificador="";
     public ArrayList<String> datos;
-    BDHandler conn=new BDHandler(this);
-    String [][] a = conn.consultarClientes("Select * from cliente");
-    public String[][] takeActivity=a;
+    BDHandler conn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +47,8 @@ public class NuevoEmpleadoActivity extends AppCompatActivity {
         guardar=findViewById(R.id.saveEmpl);
         cancelar=findViewById(R.id.cancelEmpl);
 
-
-        takeActivity=a;
+        conn=new BDHandler(this);
+        String [][] a = conn.consultarClientes("Select * from cliente");
         datos = new ArrayList<String>();
         for(int i=0;i<a.length;i++){
             datos.add(a[i][5]);
@@ -71,7 +70,7 @@ public class NuevoEmpleadoActivity extends AppCompatActivity {
                     Integer.parseInt(ff[0]));
             celular.setText(mod[0][5]);
             cantObra.setText(mod[0][6]);
-            pagoEst.setText(mod[0][6]);
+            pagoEst.setText(mod[0][7]);
         }
 
         guardar.setOnClickListener(new View.OnClickListener() {
@@ -102,9 +101,9 @@ public class NuevoEmpleadoActivity extends AppCompatActivity {
         ContentValues values=new ContentValues();
         values.put(Empleado.NOMBRE,nombre.getText().toString());
         values.put(Empleado.ACTIVIDAD,actividad.getSelectedItemPosition());
-        String feIni=fecIni.getDayOfMonth()+"-"+fecIni.getMonth()+"-"+fecIni.getYear();
+        String feIni=fecIni.getDayOfMonth()+"-"+(fecIni.getMonth()+1)+"-"+fecIni.getYear();
         values.put(Empleado.FECHA_INICIO,feIni);
-        String feFin=fecFin.getDayOfMonth()+"-"+fecFin.getMonth()+"-"+fecFin.getYear();
+        String feFin=fecFin.getDayOfMonth()+"-"+(fecFin.getMonth()+1)+"-"+fecFin.getYear();
         values.put(Empleado.FECHA_FIN,feFin);
         values.put(Empleado.CELULAR,celular.getText().toString());
         values.put(Empleado.CANT_OBRA,cantObra.getText().toString());
@@ -112,5 +111,13 @@ public class NuevoEmpleadoActivity extends AppCompatActivity {
 
         Long idRsultante=db.insert(Empleado.TABLE_EMPLEADO, Empleado.ID,values);
         Toast.makeText(getApplicationContext(),"Id Registro: "+idRsultante,Toast.LENGTH_SHORT).show();
+
+        ContentValues values2= new ContentValues();
+        values2.put(ActividadEmpleado.ID_CLIENTE,(actividad.getSelectedItemPosition()+1)+"");
+        values2.put(ActividadEmpleado.ID_EMPLEADO,idRsultante);
+        Long idResultante2=db.insert(ActividadEmpleado.TABLE_ACTIVIDAD,ActividadEmpleado.ID_EMPLEADO,values2);
+        Toast.makeText(getApplicationContext(),"Id Registro: "+idResultante2,Toast.LENGTH_SHORT).show();
+
     }
+
 }
